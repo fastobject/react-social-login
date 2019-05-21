@@ -105,11 +105,11 @@ const logout = () => new Promise((resolve) => {
 /**
  * Gets currently logged in user profile data.
  * Requires SDK to be loaded first.
- * @see https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Demail%2Cname%2Cid%2Cfirst_name%2Clast_name%2Cpicture&version=v2.9
+ * @see https://vk.com/dev/users.get
  */
 const getProfile = () => new Promise((resolve) => {
   window.VK.Api.call('users.get',
-    {user_ids: window.VK.Auth.getSession().user.id, fields: 'id,name,first_name,last_name,photo_200,email', v: apiVersion},
+    {user_ids: window.VK.Auth.getSession().user.id, fields: 'id,name,first_name,last_name,photo_200', v: apiVersion},
     resolve)
 })
 
@@ -132,38 +132,10 @@ const generateUser = (response) => ({
   }
 })
 
-const oldLoad = (appId) => {
-  const id = 'fb-client'
-  const fjs = document.getElementsByTagName('script')[0]
-  let js
-
-  if (document.getElementById(id)) {
-    return
-  }
-
-  js = document.createElement('script')
-
-  js.id = id
-  js.src = '//connect.facebook.net/en_US/all.js'
-
-  js.onLoad = () => {
-    window.fbAsyncInit = function () {
-      window.FB.init({
-        appId: appId,
-        xfbml: true,
-        version: 'v2.8'
-      })
-    }
-  }
-
-  fjs.parentNode.insertBefore(js, fjs)
-}
-
 export default {
   checkLogin,
   generateUser,
   load,
   login,
-  logout,
-  oldLoad
+  logout
 }

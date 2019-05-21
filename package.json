@@ -1,5 +1,5 @@
 {
-  "name": "react-social-login",
+  "name": "react-social-login-vk",
   "version": "3.4.3",
   "description": "React Component for Login via Social Providers",
   "main": "dist/social-login.js",
@@ -42,18 +42,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepakaggarwal7/react-social-login.git"
+    "url": "git+https://github.com/fastobject/react-social-login.git"
   },
   "keywords": [
     "social",
     "oauth"
   ],
-  "author": "Deepak Aggarwal <deepakaggarwal7@gmail.com>",
+  "author": "Maxim Lipatov <lmv@inbox.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/deepakaggarwal7/react-social-login/issues"
+    "url": "https://github.com/fastobject/react-social-login/issues"
   },
-  "homepage": "https://github.com/deepakaggarwal7/react-social-login#readme",
+  "homepage": "https://github.com/fastobject/react-social-login#readme",
   "dependencies": {
     "bluebird": "3.5.1",
     "fetch-jsonp": "1.1.3",
