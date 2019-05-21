@@ -120,6 +120,17 @@ export default class Demo extends Component {
           key={'linkedin'}
         >
           Login with LinkedIn
+        </SocialButton>,
+        <SocialButton 
+          provider='vkontakte' 
+          appId='6986774' 
+          onLoginSuccess={this.onLoginSuccess}
+          onLoginFailure={this.onLoginFailure}
+          onLogoutSuccess={this.onLogoutSuccess}
+          getInstance={this.setNodeRef.bind(this, 'vkontakte')}
+          key={'vkontakte'}
+        >
+        Login with Vkontakte
         </SocialButton>
       ]
 
@@ -155,7 +166,7 @@ export default class Demo extends Component {
           >
             Login with GitHub OAuth
           </SocialButton>
-        )
+        )    
       }
     }
 
