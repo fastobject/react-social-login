@@ -17,20 +17,20 @@ const load = ({ appId, scope }) => new Promise((resolve) => {
     return resolve()
   }
 
-  vkontakteScopes += scope
+  if (scope && parseInt(scope, 10) > 0) {
+    vkontakteScopes += scope
+  }
 
   const firstJS = document.getElementsByTagName('script')[0]
   const js = document.createElement('script')
 
-  js.src = 'https://vk.com/js/api/openapi.js?160'
+  js.src = 'https://vk.com/js/api/openapi.js'
   js.id = 'vkontakte-jssdk'
 
-  window.fbAsyncInit = () => {
+  window.vkAsyncInit = () => {
     window.VK.init({
       apiId: appId
     })
-
-    return resolve()
   }
 
   if (!firstJS) {
@@ -38,6 +38,8 @@ const load = ({ appId, scope }) => new Promise((resolve) => {
   } else {
     firstJS.parentNode.appendChild(js)
   }
+
+  return resolve()
 })
 
 /**
