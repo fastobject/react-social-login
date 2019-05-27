@@ -130,7 +130,12 @@ const generateUser = (response) => ({
   },
   token: {
     accessToken: response.sid,
-    expiresAt: timestampFromNow(response.expire)
+    expiresAt: timestampFromNow(response.expire),
+    expire: response.expire,
+    mid: response.mid,
+    secret: response.secret,
+    sid: response.sid,
+    sig: response.sig
   }
 })
 
