@@ -117,6 +117,7 @@ export default class UserCard extends Component {
             <Detail label='Email' data={_profile.email} />
             <Detail label='Expiration' data={expiration} />
             <AccessToken token={_token.accessToken} />
+            <Detail label='Raw' data={JSON.stringify(_token, null, 4)} />
           </div>
           <button style={styles.button} onClick={logout}>Logout</button>
         </div>
